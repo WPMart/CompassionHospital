@@ -14,3 +14,96 @@ section{
 .map-img { 
     width: 100%;
 }
+
+/* my Tilt Section */
+.tilt-box {
+    position: relative;
+    background-color: red;
+    border-radius: 10px;
+    height: 500px;
+    /* overflow: hidden; */
+    transform-style: preserve-3d;
+}
+
+.tilt-box::before{
+    content: 'MY';
+    position: absolute;
+    color: white;
+    font-size: 6em;
+    font-weight: bold;
+    font-style: italic;
+    top: 30px;
+    left: -100px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.tilt-box:hover::before {
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 0.4;
+}
+
+.tilt-box::after{
+    content: 'TILT';
+    position: absolute;
+    color: white;
+    font-size: 4.3em;
+    font-weight: bold;
+    font-style: italic;
+    top: 350px;
+    left: 450px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.tilt-box:hover::after {
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 0.4;
+}
+
+.tilt-name{
+    position: absolute;
+    top:0;
+    width: 100%;
+    color:white;
+    text-align: center;
+    font-size: 2em;
+    opacity: 0;
+    transform: translate3d(0, 0, 50px);
+    transition: 0.5s;
+}
+
+.tilt-box:hover .tilt-name {
+    top: 20px;
+    opacity: 1;
+
+}
+
+.tilt-detail-button{
+    position: absolute;
+    bottom:0;
+    left: 50%;
+    transform: translate3d(-50%, 0, 100px);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.tilt-box:hover .tilt-detail-button {
+    opacity: 1;
+    bottom: 20px;
+} 
+
+.tilt-img {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate3d(-50%, -52%, 100px);
+    max-width: 350px;
+    transition: 0.5s;
+}
+
+.tilt-box:hover .tilt-img {
+    transform: translate3d(-50%, -52%, 100px) rotate(5deg) scale(1.2);
+}
